@@ -4,7 +4,14 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const BarGraph =() => {
-    const options = {};
+    
+    const options = {
+        responsive: true,
+        animation: {
+          duration: 1000,
+        },
+    };
+
     const data = {
         labels: ["Labor", "Utilities", "Materials", "Transportation", "Taxes"],
         datasets: [
@@ -19,7 +26,7 @@ const BarGraph =() => {
     };
 
     return(
-        <Bar options={options} data={data} />
+        <Bar options={options} data={data}/>
     )
 }
 

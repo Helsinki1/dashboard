@@ -10,31 +10,35 @@ function App() {
 
   return (
     <Router>
-      <nav className="flex items-center bg-slate-300 px-4 py-4">
-        <h1 className="ml-10 text-xl">Dashboard</h1>
+      <div className="flex w-screen">
+        <nav className="flex flex-col h-screen w-60 items-start justify-start bg-blue-500 px-4 py-4">
+          <h1 className="ml-3 mt-10 text-3xl text-white font-bold">Dashboard</h1>
 
-        <div className= "flex ml-auto">
-          <Link to="/" className="text-gray-700 hover:underline mr-11 text-lg"> 
-            Overview
-          </Link>
-          <Link to="/analytics" className="text-gray-700 hover:underline mr-11 text-lg"> 
-            Analytics
-          </Link>
-          <Link to="/reports" className="text-gray-700 hover:underline mr-11 text-lg">
-            Reports
-          </Link>
-          <Link to="/settings" className="text-gray-700 hover:underline mr-11 text-lg">
-            Settings 
-          </Link>
+          <div className= "flex flex-col w-full ml-3 mt-9 space-y-5">
+            <Link to="/" className="text-white hover:underline mr-11 text-lg"> 
+              Overview
+            </Link>
+            <Link to="/analytics" className="text-white hover:underline mr-11 text-lg"> 
+              Analytics
+            </Link>
+            <Link to="/reports" className="text-white hover:underline mr-11 text-lg">
+              Reports
+            </Link>
+            <Link to="/settings" className="text-white hover:underline mr-11 text-lg">
+              Settings 
+            </Link>
+          </div>
+        </nav>
+
+        <div className="flex-1 p-4 w-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/Settings" element={<Settings />} />
+          </Routes>
         </div>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/Settings" element={<Settings />} />
-      </Routes>
+      </div>
     </Router>
   )
 }

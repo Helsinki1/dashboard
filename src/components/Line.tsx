@@ -4,7 +4,14 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const LineGraph = () => {
-    const options = {};
+
+    const options = {
+        responsive: true,
+        animation: {
+          duration: 1000,
+        },
+    };
+
     const data = {
         labels: [
             "Monday",
@@ -25,9 +32,9 @@ const LineGraph = () => {
     };
 
 
-  return (
-    <Line options={options} data={data} />
-  )
+    return (
+        <Line options={options} data={data}/>
+    )
 }
 
 export default LineGraph
